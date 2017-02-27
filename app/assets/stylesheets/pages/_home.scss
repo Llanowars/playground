@@ -3,3 +3,14 @@
   width: 100vw;
   background-size: cover;
 }
+.card {
+  height: 2em;
+  width: 2em;
+  margin-top: 0.15em;
+  margin-left: 0.15em;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
