@@ -1,13 +1,15 @@
 .grid {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
   height: calc(100vh - 70px);
-  width: 100vw;
+  width: 900px;
   background-size: cover;
 }
 .card {
-  flex-grow: 1;
-  min-width: 2%;
+  // flex-grow: 1;
+  // min-width: 2%;
+  height: 300px;
+  width: 300px;
   border: 2px solid rgba(0, 0, 0, 0.3);
   // margin-top: 0.15em;
   // margin-left: 0.15em;
