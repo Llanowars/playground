@@ -6,10 +6,20 @@ class User < ApplicationRecord
 
   has_one :card
 
+  after_create :unlock_a_card
+
+  def unlock_a_card
+    cards = Card.where(turned: false)
+    card = cards.sample
+    card.turned = true
+    card.save
+  end
+
+
   def self.from_omniauth(auth)
     user_params = auth.slice(:provider, :uid)
       user_params[:email] = auth.info.email
-      user_param[:pseudo] = auth.info.nickname
+      user_params[:pseudo] = auth.info.nickname
       user_params = user_params.to_h
 
       user = User.where(provider: auth.provider, uid: auth.uid).first
