@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @cards = Card.order(:id)
-    @user = User.new
+    # @user = User.new
   end
 end
