@@ -8,6 +8,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '780f52e303ff052af4c19944da69a77dac62d926514dd2c37c80d17150ec2fb1e08be604e13774966f63f04e3de829e3ed2fe2d953f2a69af18688e024849b72'
 
+  config.omniauth :twitter, ENV["TW_ID"], ENV["TW_SECRET"]
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
