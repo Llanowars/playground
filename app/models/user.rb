@@ -7,10 +7,20 @@ class User < ApplicationRecord
   has_one :card
 
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.username = auth.info.nickname
-    end
+    user_params = auth.slice(:provider, :uid)
+      user_params[:email] = auth.info.email
+      user_param[:pseudo] = auth.info.nickname
+      user_params = user_params.to_h
+
+      user = User.where(provider: auth.provider, uid: auth.uid).first
+      user ||= User.where(email: auth.info.email).first # User did a regular sign up in the past.
+      if user
+        user.update(user_params)
+      else
+        user = User.new(user_params)
+        user.password = Devise.friendly_token[0,20]  # Fake password for validation
+        user.save
+      end
+    return user
   end
 end
