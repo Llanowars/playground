@@ -4,11 +4,11 @@
 //= require_tree .
 
 
-$( document ).ready(function() {
-  $("#sign_up").modal({show:false });
+// $( document ).ready(function() {
+//   $("#sign_up").modal({show:false });
 
-  $(".card").click(function(){
-    $(this).css('background-image','none');
-    $(this).css('background-color','#F2F2F0');
-  });
-});
+//   $(".card").click(function(){
+//     $(this).css('background-image','none');
+//     $(this).css('background-color','#F2F2F0');
+//   });
+// });

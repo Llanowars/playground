@@ -9,10 +9,11 @@ class User < ApplicationRecord
   after_create :unlock_a_card
 
   def unlock_a_card
-    cards = Card.where(turned: false)
-    card = cards.sample
-    card.turned = true
-    card.save
+    card = Card.where(turned: false).order("RANDOM()").first
+    unless card.nil?
+      card.turned = true
+      card.save
+    end
   end
 
 
