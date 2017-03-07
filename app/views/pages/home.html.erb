@@ -2,7 +2,7 @@
 
   <% @cards.each do |card| %>
     <div class="col-xs-4">
-      <% unless card.turned %>
+      <% if card.turned %>
         <div class="card" id="<%= card.id %>" style="background-image: url('<%= image_path(card.picture) %>')"></div>
       <% else %>
         <div class="card" id="<%= card.id %>" style="background-color: <%= card.color %>"></div>
