@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 5.0.0"
 
+gem 'omniauth-twitter'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
