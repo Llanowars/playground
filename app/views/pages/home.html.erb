@@ -4,7 +4,7 @@
     <div class="col-xs-4">
       <% if card.turned %>
         <div class="card" id="<%= card.id %>">
-          <%= image_tag "1.jpg" %>
+          <%= image_tag card.link %>
         </div>
       <% else %>
         <div class="card" id="<%= card.id %>" style="background-color: <%= card.color %>"></div>
