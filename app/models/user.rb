@@ -4,19 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :card
-
-  after_create :unlock_a_card
-
-  def unlock_a_card
-    card = Card.where(turned: false).order("RANDOM()").first
-    unless card.nil?
-      card.turned = true
-      card.save
-    end
-  end
-
-
   def self.from_omniauth(auth)
     user_params = auth.slice(:provider, :uid)
       user_params[:email] = auth.info.email
