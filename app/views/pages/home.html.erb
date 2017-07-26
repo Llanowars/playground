@@ -1,15 +1,1 @@
-<div class="grid" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%#= image_path('background.jpg') %>');">
-
-  <% @cards.each do |card| %>
-    <div class="col-xs-4">
-      <% if card.turned %>
-        <div class="card" id="<%= card.id %>">
-          <%= image_tag card.link %>
-        </div>
-      <% else %>
-        <div class="card" id="<%= card.id %>" style="background-color: <%= card.color %>"></div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
 <%= render "devise/registrations/new" %>
