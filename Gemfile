@@ -17,6 +17,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+gem 'pg_search'
 gem 'omniauth-twitter'
 
 group :development, :test do
