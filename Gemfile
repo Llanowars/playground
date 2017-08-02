@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem 'pg_search'
+gem 'kaminari'
 gem 'omniauth-twitter'
 
 group :development, :test do
