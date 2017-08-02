@@ -1,6 +1,15 @@
 <div class="container">
+  <div class="row marged-top text-center">
+    <form action="/">
+      <!-- <label for="name">Search</label> -->
+      <input type="text" name="search" id="name">
+      <input type="submit" value="search">
+
+    </form>
+
+  </div>
   <div class="row marged-top">
-    <% @movies.try(:each) do |movie| %>
+    <% @movies&.each do |movie| %>
 
       <div class="col-xs-12 col-sm-4">
         
