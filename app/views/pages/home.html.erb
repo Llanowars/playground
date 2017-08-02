@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row marged-top">
-    <% @movies.each do |movie| %>
+    <% @movies.try(:each) do |movie| %>
 
       <div class="col-xs-12 col-sm-4">
         
