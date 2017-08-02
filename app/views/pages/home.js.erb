@@ -1,7 +1,7 @@
 // Create a paragraph for the new review. But hide it.
-var new_movies = $("<%= j render 'pages/home', movies: @movies %>").hide();
+var new_movies = $("<%= j render 'pages/movies', movies: @movies %>").hide();
 // Add it to the DOM, at the end of the existing reviews. It's still hidden.
-  $('#movies').html(new_movies);
+$('#movies').html(new_movies);
 // $('#reviews').append(new_review);
 // // Show the new review with an animation!
 // new_review.slideDown();
