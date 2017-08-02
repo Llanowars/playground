@@ -3,8 +3,12 @@ class PagesController < ApplicationController
 
   def home
     word = params[:search] 
-    unless word.empty?
+    unless word.nil?
       @movies = PgSearch.multisearch(word)
+    end
+     respond_to do |format|
+      format.html
+      format.js # index.js.erb
     end
   end
 end
