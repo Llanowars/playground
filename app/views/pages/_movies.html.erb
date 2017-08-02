@@ -12,3 +12,8 @@
     </div>
   <% end %>
 </div>
+<div class="text-center">
+  <% unless movies.nil? %>
+    <%= paginate movies, remote: true%>
+  <% end %>
+</div>

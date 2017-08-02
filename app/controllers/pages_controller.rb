@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     word = params[:search] 
     unless word.nil?
-      @movies = PgSearch.multisearch(word).limit(3)
+      @movies = PgSearch.multisearch(word).page(params[:page]).per(3)
     end
     respond_to do |format|
       format.html
