@@ -6,9 +6,9 @@ class PagesController < ApplicationController
     unless word.nil?
       @movies = PgSearch.multisearch(word)
     end
-     respond_to do |format|
+    respond_to do |format|
       format.html
-      format.js # index.js.erb
+      format.js # home.js.erb
     end
   end
 end
